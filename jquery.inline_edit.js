@@ -9,8 +9,12 @@
 		object.append('<div id="text_val" class="inline_text"></div>');
 		
 		//Add edit_box
-		object.append('<div id="edit_box"><input type="text" class="inline_box"/>' +
-			'<span class="inline_warning"> ' + max + '</span></div>');
+		var warning = '';
+		if (max > 0) {
+			warning = '<span class="inline_warning"> ' + max + '</span>';
+		}
+		
+		object.append('<div id="edit_box"><input type="text" class="inline_box"/>' + warning + '</div>');
 		
 		//Set up DOM objects
 		var add_link = object.children('#add_link');
@@ -26,7 +30,7 @@
 		function set_val() {
 			var val = edit_box.children('input').val();
 			
-			if (val.length <= max) {
+			if (val.length <= max || max < 1) {
 				edit_box.hide();
 				text_val.html(val);
 				
@@ -60,18 +64,20 @@
 	  });
 	
 		//Set typing listeners
-		edit_box.bind('keyup', function() {
-			var val = max - edit_box.children('input').val().length;
-	    edit_box.children('span').html(' ' + val);
+		if (max > 0) {
+			edit_box.bind('keyup', function() {
+				var val = max - edit_box.children('input').val().length;
+		    edit_box.children('span').html(' ' + val);
 	
-			if (val < 0) {
-				edit_box.children('span').css('color', 'red');
-			}
+				if (val < 0) {
+					edit_box.children('span').css('color', 'red');
+				}
 			
-			else {
-				edit_box.children('span').css('color', standard_warning);
-			}
-	  });
+				else {
+					edit_box.children('span').css('color', standard_warning);
+				}
+		  });
+		}
 	
 		//Set re-edit listener
 		text_val.click(function() {
