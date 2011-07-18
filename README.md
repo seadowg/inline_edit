@@ -40,6 +40,9 @@ Yeah I know. All the elements are classed so you can CSS them up nicely. Here's 
     Char Count   : class='inline_warning'
     Text Value   : class='inline_text'
     
+If you want multiple inline_edit values and you want different styles for them then just nest rules
+for these inside your parent div ('crazy_value' from above).
+    
 #### Wait a sec! How do I get the actual value?
 
 Simples. Just do this on your div (we'll use the one from before):
