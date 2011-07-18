@@ -3,7 +3,7 @@
 ### Description
 
 inline_edit is a small jquery plugin I cam up with so I could allow users to add/edit values inline
-in a way that would work in a versatile way. inline_edit does pretty much all the work for you so
+in versatile way. inline_edit does pretty much all the work for you so
 all you need to do (literally) is style it.
 
 ### Tutorial
