@@ -35,10 +35,10 @@ serious. Basically the two args are as follows:
 
 Yeah I know. All the elements are classed so you can CSS them up nicely. Here's the deets:
 
-    'Add <name>' Link => class='inline_add'
-    Edit Box => class='inline_box'
-    Char Count => class='inline_warning'
-    Text Value => class='inline_text'
+    'Add <name>' : class='inline_add'
+    Edit Box     : class='inline_box'
+    Char Count   : class='inline_warning'
+    Text Value   : class='inline_text'
     
 #### Wait a sec! How do I get the actual value?
 
