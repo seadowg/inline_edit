@@ -47,9 +47,9 @@
 		//Set add listener
 		add_link.click(function() {
 	    add_link.hide();
-	    edit_box.val(text_val.html());
+	    edit_box.children('input').val(text_val.html());
 		  edit_box.show();
-		  edit_box.focus();
+		  edit_box.children('input').focus();
 	  });
 	
 		//Set close listeners
@@ -82,9 +82,9 @@
 		//Set re-edit listener
 		text_val.click(function() {
 	    text_val.hide();
-	    edit_box.val(text_val.html());
+	    edit_box.children('input').val(text_val.html());
 		  edit_box.show();
-		  edit_box.focus();
+		  edit_box.children('input').focus();
 	  });
 	
 		return object;
