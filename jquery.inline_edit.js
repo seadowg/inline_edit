@@ -68,6 +68,7 @@
 			edit_box.bind('keyup', function() {
 				var val = max - edit_box.children('input').val().length;
 		    edit_box.children('span').html(' ' + val);
+				text_val.html(edit_box.children('input').val());
 	
 				if (val < 0) {
 					edit_box.children('span').css('color', 'red');
