@@ -18,7 +18,7 @@ editable thingy:
     
 Then do this in javascript to set the whole thing up:
 
-    $('#crazy_value').inline_edit('Value', 140);
+    $('#crazy_value').inline_edit('Value', 140, null);
     
 Wasn't that easy? You've just basically implemented what you'll find in the test.html file included so
 refer to this if you are confused. 
@@ -30,6 +30,8 @@ serious. Basically the two args are as follows:
 
     name : The name of the value being edited. Used for the inital states 'Add <name>' link.
     max  : This sets the maximum character length of your editable value. Set it to 0 to make it unlimited.
+    init : Don't want the 'Add <name>' cause you have your own default value? Set it here. If you do want the
+           link - just pass in null.
     
 #### Sweet! It looks like crap though...
 

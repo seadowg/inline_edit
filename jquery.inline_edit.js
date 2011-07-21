@@ -1,12 +1,16 @@
 (function( $ ){
-  $.fn.inline_edit = function(name, max) {
+  $.fn.inline_edit = function(name, max, init) {
 		var object = this;
+		
+		var val;
+		if (init == null) val = "";
+		else val = init;
 		
 		//Add add_link
 		object.append('<div id="add_link"><a href="#" class="inline_add">Add ' + name + '</a></div>');
 		
 		//Add text_val
-		object.append('<div id="text_val" class="inline_text"></div>');
+		object.append('<div id="text_val" class="inline_text">' + val + '</div>');
 		
 		//Add edit_box
 		var warning = '';
@@ -24,7 +28,8 @@
 		
 		//Hide init
 		edit_box.hide();
-		text_val.hide();
+		if (init == null) text_val.hide();
+		else add_link.hide();
 		
 		//Define val setter
 		function set_val() {
@@ -45,7 +50,7 @@
 		}
 		
 		//Set add listener
-		add_link.click(function() {
+		add_link.children('a').click(function() {
 	    add_link.hide();
 	    edit_box.children('input').val(text_val.html());
 		  edit_box.show();
@@ -53,11 +58,11 @@
 	  });
 	
 		//Set close listeners
-		edit_box.focusout(function() {
+		edit_box.children('input').focusout(function() {
 	    set_val();
 	  });
 
-	  edit_box.keyup(function(event){
+	  edit_box.children('input').keyup(function(event){
 	    if(event.keyCode == 13){
 	      set_val();
 	    }
@@ -65,7 +70,7 @@
 	
 		//Set typing listeners
 		if (max > 0) {
-			edit_box.bind('keyup', function() {
+			edit_box.children('input').bind('keyup', function() {
 				var val = max - edit_box.children('input').val().length;
 		    edit_box.children('span').html(' ' + val);
 				text_val.html(edit_box.children('input').val());
