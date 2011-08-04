@@ -15,7 +15,7 @@
 		//Add edit_box
 		var warning = '';
 		if (max > 0) {
-			warning = '<span class="inline_warning"> ' + max + '</span>';
+			warning = '<span class="inline_warning"> ' + (max - val.length)+ '</span>';
 		}
 		
 		object.append('<div id="edit_box"><input type="text" class="inline_box"/>' + warning + '</div>');
@@ -28,7 +28,7 @@
 		
 		//Hide init
 		edit_box.hide();
-		if (init == null) text_val.hide();
+		if (init == null || init == "") text_val.hide();
 		else add_link.hide();
 		
 		//Define val setter
