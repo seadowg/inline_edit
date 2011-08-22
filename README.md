@@ -51,7 +51,7 @@ Simples. Just do this on your div (we'll use the one from before):
 
     $('#crazy_value').children('#text_val').html();
     
-### Questions? Problems
+### Questions? Problems?
 
 Either create an issue on the github repo (http://github.com/oetzi/inline_edit) or holla at me at oetzi101@gmail.com.
 
