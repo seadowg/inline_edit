@@ -51,7 +51,7 @@ Simples. Just do this on your div (we'll use the one from before):
 
     $('#crazy_value').children('#text_val').text();
     
-### What if some joker tries to mess my site up for themselves by entering loads of HTML?
+#### What if some joker tries to mess my site up for themselves by entering loads of HTML?
 
 I thought of this. At first I was like: "Whatever! Who cares?!". But then I was like "Oh crap that's a problem...". Basically
 the internals can cope with this and use some lovely jQuery magic to escape the HTML. Always make sure to use 'text()' instead of 'html()' to get the current value. Otherwise, you end up with some strange stuff (magic even) appearing...
