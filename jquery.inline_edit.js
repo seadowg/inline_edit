@@ -37,7 +37,8 @@
 			
 			if (val.length <= max || max < 1) {
 				edit_box.hide();
-				text_val.html(val);
+				text_val.text(val);
+				edit_box.val(val);
 				
 				if (text_val.html() == "") {
 					add_link.show()
@@ -73,7 +74,7 @@
 			edit_box.children('input').bind('keyup', function() {
 				var val = max - edit_box.children('input').val().length;
 		    edit_box.children('span').html(' ' + val);
-				text_val.html(edit_box.children('input').val());
+				text_val.text(edit_box.children('input').val());
 	
 				if (val < 0) {
 					edit_box.children('span').css('color', 'red');
@@ -88,7 +89,6 @@
 		//Set re-edit listener
 		text_val.click(function() {
 	    text_val.hide();
-	    edit_box.children('input').val(text_val.html());
 		  edit_box.show();
 		  edit_box.children('input').focus();
 	  });
